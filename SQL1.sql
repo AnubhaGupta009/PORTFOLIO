@@ -1,6 +1,7 @@
 -- Database Creation - Step 1
 create database SQL_WORKING;
 
+
 -- Creating connection with the database -- Step -2
 use SQL_WORKING;
 -- DROP DATABASE SQL_WORKING;
@@ -89,4 +90,31 @@ group by year
 having AVG(Length_minutes) > "100"
 order by count(title) desc;
 
+--  create another table 
+create table RANK_File (Id int not null Primary key , Movies_Rank int);
+select * from RANK_File ;
+insert into RANK_FIle values (1,14);
+insert into RANK_FIle values (2,13);
+insert into RANK_FIle values (3,15);
+insert into RANK_FIle values (4,12);
+insert into RANK_FIle values (5,17);
+insert into RANK_FIle values (6,9);
+insert into RANK_FIle values (7,11);
+insert into RANK_FIle values (9,10);
+insert into RANK_FIle values (10,7);
+insert into RANK_FIle values (11,6);
+insert into RANK_FIle values (12,2);
+insert into RANK_FIle values (13,1);
+insert into RANK_FIle values (14,8);
+insert into RANK_FIle values (15,5);
+insert into RANK_FIle values (16,4);
+insert into RANK_FIle values (17,3);
 
+
+---- Exercise 
+-- Q1
+select * from movies inner join RANK_File on movies.id = rank_file.id;
+-- Q2
+select * from movies Right join RANK_File on movies.id = rank_file.id;
+-- Q3
+select * from movies left join RANK_File on movies.id = rank_file.id;
